@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-30T00:08:40.658Z</updated>
+  <updated>2020-05-30T13:30:38.210Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>typora-vue-theme主题介绍</title>
-    <link href="http://yoursite.com/2020/05/30/di-yi-ci-bo-ke/"/>
-    <id>http://yoursite.com/2020/05/30/di-yi-ci-bo-ke/</id>
-    <published>2020-05-30T01:25:00.000Z</published>
-    <updated>2020-05-30T00:08:40.658Z</updated>
+    <title>JVM内存</title>
+    <link href="http://yoursite.com/2020/05/30/jvm-nei-cun/"/>
+    <id>http://yoursite.com/2020/05/30/jvm-nei-cun/</id>
+    <published>2020-05-30T13:30:14.240Z</published>
+    <updated>2020-05-30T13:30:38.210Z</updated>
     
     <summary type="html">
     
@@ -29,28 +29,22 @@
       
         
         
-          &lt;h1 id=&quot;对博客进行第一次测试&quot;&gt;&lt;a href=&quot;#对博客进行第一次测试&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;栈（虚拟机栈）：存放局部变量，并且方法的运行一定在栈中&lt;br&gt;堆：凡是new出来的东西都在栈中&lt;br&gt;方法区：存储.class相关信息，包含方法的信息&lt;br&gt;本地方法栈：与操作系统相关&lt;br&gt;程序计数器（寄存器）：与cpu相关&lt;br&gt;这五大内存区统称为运行时数据区&lt;br&gt;其
         
       
     
     </summary>
     
     
-      <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="Typora" scheme="http://yoursite.com/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
     
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/05/29/hello-world/"/>
-    <id>http://yoursite.com/2020/05/29/hello-world/</id>
-    <published>2020-05-29T08:51:19.204Z</published>
-    <updated>2020-05-29T08:51:19.204Z</updated>
+    <title>字符串方法</title>
+    <link href="http://yoursite.com/2020/05/30/zi-fu-chuan-fang-fa/"/>
+    <id>http://yoursite.com/2020/05/30/zi-fu-chuan-fang-fa/</id>
+    <published>2020-05-30T13:30:00.000Z</published>
+    <updated>2020-05-30T13:28:45.367Z</updated>
     
     <summary type="html">
     
@@ -58,13 +52,129 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;p&gt;一、字符串的检索方法&lt;/p&gt;
+&lt;p&gt;1、charAt()&lt;/p&gt;
+&lt;p&gt;2、charCodeAt()&lt;/p&gt;
+&lt;p&gt;3、indexOf()&lt;/p&gt;
+&lt;p&gt;4、lastIndexOf()&lt;/p&gt;
+&lt;p&gt;chatAt()&lt;/p&gt;
+&lt;p&gt;语法：stringObject.charA
         
       
     
     </summary>
     
     
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="字符串" scheme="http://yoursite.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Java的常量池，运行时常量池，和串池（字符串常量池）</title>
+    <link href="http://yoursite.com/2020/05/30/guan-yu-java-de-chang-liang-chi-yun-xing-shi-chang-liang-chi-he-chuan-chi-zi-fu-chuan-chang-liang-chi/"/>
+    <id>http://yoursite.com/2020/05/30/guan-yu-java-de-chang-liang-chi-yun-xing-shi-chang-liang-chi-he-chuan-chi-zi-fu-chuan-chang-liang-chi/</id>
+    <published>2020-05-30T13:29:23.719Z</published>
+    <updated>2020-05-30T13:30:01.028Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;常量池：&quot;&gt;&lt;a href=&quot;#常量池：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>StringBuilder和StringBuffer</title>
+    <link href="http://yoursite.com/2020/05/30/stringbuilder-he-stringbuffer/"/>
+    <id>http://yoursite.com/2020/05/30/stringbuilder-he-stringbuffer/</id>
+    <published>2020-05-30T13:27:35.334Z</published>
+    <updated>2020-05-30T13:28:57.894Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;StringBuffer是线程安全的，但速度慢&lt;/p&gt;
+&lt;p&gt;StringBuilder是线程不安全，但速度快&lt;/p&gt;
+&lt;p&gt;由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Web文件下载</title>
+    <link href="http://yoursite.com/2020/05/30/web-wen-jian-xia-zai/"/>
+    <id>http://yoursite.com/2020/05/30/web-wen-jian-xia-zai/</id>
+    <published>2020-05-30T13:25:00.000Z</published>
+    <updated>2020-05-30T13:14:22.697Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;需要工具类：commons-io-2.6-bin和commons-fileupload-1.4-bin&lt;/p&gt;
+&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文件上传</title>
+    <link href="http://yoursite.com/2020/05/30/wen-jian-shang-chuan/"/>
+    <id>http://yoursite.com/2020/05/30/wen-jian-shang-chuan/</id>
+    <published>2020-05-30T13:23:00.000Z</published>
+    <updated>2020-05-30T13:25:11.444Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;实现文件上传必须把&lt;from&gt;设置为enctype=”multipart/form-data” 请求方式为post如&lt;/p&gt;
+&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Demon">
+    <meta name="keywords" content="关于Java的常量池，运行时常量池，和串池（字符串常量池）, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Demon</title>
+    <title>关于Java的常量池，运行时常量池，和串池（字符串常量池） | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">关于Java的常量池，运行时常量池，和串池（字符串常量池）</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-29
+                    2020-05-30
                 </div>
                 
 
@@ -459,15 +459,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="常量池："><a href="#常量池：" class="headerlink" title="常量池："></a>常量池：</h1><p>常量池：常量池是*.clsaa文件中的，就是一张表，存储常量符号，虚拟指令可以这些常量符号来查找类或方法或类型。</p>
+<p>运行时常量池：当类被加载，它的常量池信息就会放入方法区的运行时常量池，并把里面的符号地址变为真实地址。</p>
+<h2 id="StringTable（串池）hashtable结构，不能扩容："><a href="#StringTable（串池）hashtable结构，不能扩容：" class="headerlink" title="StringTable（串池）hashtable结构，不能扩容："></a>StringTable（串池）hashtable结构，不能扩容：</h2><p>在jdk1.8时串池再堆区中</p>
+<p>jdk1.7把串池移除方法区</p>
+<p>运行时常量池的字符串仅是符号，还没有变为对象，第一次用的才变为对象并且放入串池中</p>
+<p>利用串池机制，来避免创建重复字符串对象</p>
+<p>常量字符串并不会直接创建，而是引用到位置时在创建串池字符串对象</p>
+<p>当字符串变量进行进行拼接时会创建一个stringbuilder对象（1.8）进行拼接，并调用 toString（）方法返回一个字符串对象（在堆中存储的）</p>
+<p>当字符串常量进行拼接时会在编译期间进行优化会直接对字符串进行拼接，在运行期间在串池查找是否存在一样的字符串再返回引用</p>
+<p>1.8中intern（）方法可以将字符串对象放入串池，如果已存在则不放入，返回串池的对象</p>
+<p>1.6中intern（）方法方法可以将字符串对象放入串池，如果已存在则不放入，没有则将对象复制一份放入串池，返回串池的对象</p>
+<p>在JVM1.6串池是常量池的一部分存储在方法区（永久代）内</p>
+<p>在JVM1.7中串池放在堆中</p>
+<p>垃圾回收:由于在常量区内会进行垃圾回收</p>
 
             </div>
             <hr/>
@@ -493,7 +498,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/29/hello-world/">http://yoursite.com/2020/05/29/hello-world/</a>
+                    <a href="http://yoursite.com/2020/05/30/guan-yu-java-de-chang-liang-chi-yun-xing-shi-chang-liang-chi-he-chuan-chi-zi-fu-chuan-chang-liang-chi/">http://yoursite.com/2020/05/30/guan-yu-java-de-chang-liang-chi-yun-xing-shi-chang-liang-chi-he-chuan-chi-zi-fu-chuan-chang-liang-chi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -700,19 +705,26 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/30/di-yi-ci-bo-ke/">
+                <a href="/2020/05/30/zi-fu-chuan-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="typora-vue-theme主题介绍">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="字符串方法">
                         
-                        <span class="card-title">typora-vue-theme主题介绍</span>
+                        <span class="card-title">字符串方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            一、字符串的检索方法
+1、charAt()
+2、charCodeAt()
+3、indexOf()
+4、lastIndexOf()
+chatAt()
+语法：stringObject.charAt(index)
+功能：返回stringObjec
                         
                     </div>
                     <div class="publish-info">
@@ -723,8 +735,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
+                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Java基础
                                 </a>
                             
                             
@@ -734,12 +746,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+                        <span class="chip bg-color">字符串</span>
                     </a>
                     
                 </div>
@@ -750,27 +758,29 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/29/hello-world/">
+                <a href="/2020/05/30/stringbuilder-he-stringbuffer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="StringBuilder和StringBuffer">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">StringBuilder和StringBuffer</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            StringBuffer是线程安全的，但速度慢
+StringBuilder是线程不安全，但速度快
+由于 StringBuilder 相较于 StringBuffer 有速度优势，所以多数情况下建议使用 StringBuilder 类。然而在
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
                             </span>
                         <span class="publish-author">
                             
@@ -780,7 +790,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
