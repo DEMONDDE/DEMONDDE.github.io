@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-30T13:30:38.210Z</updated>
+  <updated>2020-06-01T00:08:50.302Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java集合</title>
+    <link href="http://yoursite.com/2020/05/31/java-ji-he/"/>
+    <id>http://yoursite.com/2020/05/31/java-ji-he/</id>
+    <published>2020-05-31T03:19:00.000Z</published>
+    <updated>2020-06-01T00:08:50.302Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;集合分为collection和map，&lt;br&gt;Collection是单列集合类的接口，&lt;br&gt;Map是双列集合类的接口&lt;/p&gt;
+&lt;h1 id=&quot;Collection接口&quot;&gt;&lt;a href=&quot;#Collection接口&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="集合" scheme="http://yoursite.com/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
   
   <entry>
     <title>JVM内存</title>

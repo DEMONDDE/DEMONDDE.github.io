@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JVM内存, Demon">
+    <meta name="keywords" content="Java集合, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JVM内存 | Demon</title>
+    <title>Java集合 | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,7 +314,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JVM内存</h1>
+                    <h1 class="description center-align post-title">Java集合</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%9B%86%E5%90%88/">
+                                <span class="chip bg-color">集合</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                Java基础
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -443,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-30
+                    2020-05-31
                 </div>
                 
 
@@ -459,19 +472,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>栈（虚拟机栈）：存放局部变量，并且方法的运行一定在栈中<br>堆：凡是new出来的东西都在栈中<br>方法区：存储.class相关信息，包含方法的信息<br>本地方法栈：与操作系统相关<br>程序计数器（寄存器）：与cpu相关<br>这五大内存区统称为运行时数据区<br>其中栈，程序计数器，本地方法区时线程私有的，随着线程启动而创建，而堆和方法区时共有的，随线程启动而创建</p>
-<h2 id="程序计数器："><a href="#程序计数器：" class="headerlink" title="程序计数器："></a>程序计数器：</h2><p>记住下一条jvm指令的执行地址<br>在物理上通过cpu寄存器实现的<br>程序计数器是私有的，每个线程有自己的程序计数器不会存在内存溢出</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>线程运行需要的内存空间<br>栈是线程私有的<br>栈由栈帧组成，每个栈帧代表一次方法的调用（栈帧也可以说是每个方法的内存）每个线程只有一个活动栈帧（线程正在执行的方法）<br>注意：<br> &emsp;    1. 当方法执行完毕后会自动弹出栈，所以垃圾回收不涉及栈内存<br>   &emsp;        2. 栈可以通过调节大小，但栈越大同时运行的线程越少<br>   &emsp;      3.方法内定义的局部变量是线程安全的</p>
-<p>   注：如果方法内局部变量没有逃离方法的作用范围，他是线程安全的如果局部变量变量引用，并逃离方法的作用范围，需要考虑线程安全</p>
-<p>栈内存溢出：<br>&emsp;1.栈帧过多（例如递归调用没有设置好结束条件会不断调用自身并且不会结束）<br>&emsp;2.栈帧过大（很少出现）</p>
-<h2 id="本地方法栈："><a href="#本地方法栈：" class="headerlink" title="本地方法栈："></a>本地方法栈：</h2><p>本地方法使用的内存<br>栈是线程私有的<br>本地方法（如hashcode，clone）是指不是Java代码编写的方法，由于有时候Java无法与系统层进行操作，所以会调用用c或c++编写的方法进行对系统的操作</p>
-<h2 id="堆："><a href="#堆：" class="headerlink" title="堆："></a>堆：</h2><p>通过new关键字，创建对象都会使用堆内存<br>线程共享的，需要考虑线程安全<br>有垃圾回收机制</p>
-<h2 id="方法区："><a href="#方法区：" class="headerlink" title="方法区："></a>方法区：</h2><p>存储类结构相关信息：成员变量，方法数据，成员方法和构造器代码，类构造器，运行时常量池）虚拟机启动时创建，逻辑上是堆的一部分（但不同厂商可能不同）（在1.8被称作元空间，放在内存中而不是jvm内，不占用堆内存）</p>
-<p>线程共享的，需要考虑线程安全</p>
-<p>存在内存溢出（规范规定方法区可以不实现垃圾收集）</p>
-<h2 id="直接内存："><a href="#直接内存：" class="headerlink" title="直接内存："></a>直接内存：</h2><p>不属于JVM内存，而是操作系统的内存<br>常见与NIO操作，用于数据缓冲区分配<br>回收代价大，但读写性能高，不受JVM内存回收管理，需要自己回收。</p>
-<p>以上为个人整理发布</p>
+                <p>集合分为collection和map，<br>Collection是单列集合类的接口，<br>Map是双列集合类的接口</p>
+<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><p>collection实现接口有：List  ，Set，Queue</p>
+<p>注：在jdk1.5后添加的Queue</p>
+<h2 id="Collection常用方法"><a href="#Collection常用方法" class="headerlink" title="Collection常用方法"></a>Collection常用方法</h2><p><font color=#DC143C> 注意:Collection方法是没有带索引的方法的</font></p>
+<img src="/2020/05/31/java-ji-he/collection.png" class="">
 
+
+<h2 id="List接口："><a href="#List接口：" class="headerlink" title="List接口："></a>List接口：</h2><ol>
+<li><p>有序的集合</p>
+</li>
+<li><p>允许存储重复的元素</p>
+</li>
+<li><p>有索引，可以使用for循环</p>
+</li>
+</ol>
+<h3 id="List集合包括：ArrayList-，LinkedList，-Vector"><a href="#List集合包括：ArrayList-，LinkedList，-Vector" class="headerlink" title="List集合包括：ArrayList ，LinkedList， Vector"></a>List集合包括：ArrayList ，LinkedList， Vector</h3><ol>
+<li><p>ArrayList：底层是数组实现，查询快，增删慢</p>
+</li>
+<li><p>LinkedList：底层是链表实现的，查询慢，增删快，包含大量操作首尾元素的方法</p>
+</li>
+<li><p>LinkedList还有一个 push（）和pop（）方法等同于addFirst（）和removeFirst（）；</p>
+</li>
+<li><p>Vector：底层结构是数组，线程安全的，增删慢，查询快（不常用）</p>
+</li>
+</ol>
+<p><font color=#DC143C>注意：当使用集合特有方法将无法使用多态</font></p>
+<img src="/2020/05/31/java-ji-he/list.png" class="">
+
+<p>注：void add(int index, E element)在列表的指定位置插入指定元素（可选操作）。将当前处于该位置的元素（如果有的话）和所有后续元素向右移动（在其索引中加 1）</p>
+<h2 id="Set接口："><a href="#Set接口：" class="headerlink" title="Set接口："></a>Set接口：</h2><ol>
+<li>不允许存储重复元素如果添加的是已有的数据， 会用现在的值替换原来的值，并返回原来的值</li>
+<li>没有索引，所以不能有for循环</li>
+</ol>
+<h3 id="Set集合包括：HashSet，-LinkedHashSet，-TreeSet"><a href="#Set集合包括：HashSet，-LinkedHashSet，-TreeSet" class="headerlink" title="Set集合包括：HashSet， LinkedHashSet， TreeSet"></a>Set集合包括：HashSet， LinkedHashSet， TreeSet</h3><p>  HashSet：底层是哈希表和红黑树实现的，无索引，不可以存储重复元素，存取无序，存储元素和取出元素可能不一致，查询速度非常快。</p>
+<p>注：当HashSet存储自定义类型元素如String，Integer，Student，Pojo类等</p>
+<p>需要重写hashcode（）和equals（）方法，防止出现对象属性相同但依旧可以存储的情况，应为当自定义的对象的属性相同应该视为同一个对象。</p>
+<p>LinkedHashSet：底层是哈希表和链表实现的，无索引，不可以存储重复元素，可以保证存取顺序</p>
+<p>TreeSet：底层是二叉树实现，一般用于排序</p>
+<p>在jdk1.8之前 ：哈希表=数组+链表</p>
+<p>在jdk1.8之后：哈希表=数组+链表 或 哈希表=数组+红黑树</p>
+<h2 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h2><p>  由于大多数资料没有详细介绍Queue接口所以我单独写了笔记进行介绍</p>
+<h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><p>Map集合键存储键值对，键不可以重复，但值可以重复，但一个键对应一个值</p>
+<p>键和值的数据类型可以相同，也可以不相同</p>
+<p>当添加重复值会替换掉原来的值会返回旧值如果之前不存在则返回null</p>
+<p>注：在Map接口中有一个内部接口Entry，用来记录键与值</p>
+<p>Map实现子类常用的有 HashMap， LinkedHashMap</p>
+<p><img src="/2020/05/31/java-ji-he/map.png" class="" title="}&lt;&#x2F;p&gt; &lt;h2 id&#x3D;HashMap：&gt;&lt;a href&#x3D;#HashMap： class&#x3D;headerlink title&#x3D;HashMap：&gt;&lt;&#x2F;a&gt;HashMap：&lt;&#x2F;h2&gt;&lt;p&gt;1.HashMap集合底层是哈希表，查询速度特别快&lt;&#x2F;p&gt; &lt;p&gt;jdk1.8之前：数组+单向链表&lt;&#x2F;p&gt; &lt;p&gt;jdk1.8之后：数组+单向链表&#x2F;红黑树&lt;&#x2F;p&gt; &lt;p&gt;2.HashMap是一个无序的集合，存储元素和取出元素顺序很可能不一致&lt;&#x2F;p&gt; &lt;p&gt;注：当HashMap存储自定义类型元素作为键时，需要重写hashcode（）和equals（）方法，防止出现对象属性相同但依旧可以存储的情况，应为当自定义的对象的属性相同应该视为同一个对象。&lt;&#x2F;p&gt; &lt;h2 id&#x3D;LinkedHashMap：&gt;&lt;a href&#x3D;#LinkedHashMap： class&#x3D;headerlink title&#x3D;LinkedHashMap：&gt;&lt;&#x2F;a&gt;LinkedHashMap：&lt;&#x2F;h2&gt;&lt;p&gt;1.LinkedHashMap集合底层是哈希表+链表&lt;&#x2F;p&gt; &lt;p&gt;2.LinkHashMap集合底层是有序的集合，存储元素和取出元素顺序是一致&lt;&#x2F;p&gt; &lt;p&gt;3.LinkedHashMap可以根据访问顺序和插入顺序进行排序&lt;&#x2F;p&gt; &lt;h2 id&#x3D;HashTable：&gt;&lt;a href&#x3D;#HashTable： class&#x3D;headerlink title&#x3D;HashTable：&gt;&lt;&#x2F;a&gt;HashTable：&lt;&#x2F;h2&gt;&lt;p&gt;1.键和值都不能为null&lt;&#x2F;p&gt; &lt;p&gt;2.是线程安全的，速度慢&lt;&#x2F;p&gt;">
             </div>
             <hr/>
 
@@ -496,7 +543,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/30/jvm-nei-cun/">http://yoursite.com/2020/05/30/jvm-nei-cun/</a>
+                    <a href="http://yoursite.com/2020/05/31/java-ji-he/">http://yoursite.com/2020/05/31/java-ji-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -533,7 +580,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E9%9B%86%E5%90%88/">
+                                    <span class="chip bg-color">集合</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -699,9 +750,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/31/java-ji-he/">
                     <div class="card-image">
@@ -722,9 +774,9 @@ Coll
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -737,6 +789,7 @@ Coll
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -755,26 +808,19 @@ Coll
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/30/zi-fu-chuan-fang-fa/">
+                <a href="/2020/05/30/jvm-nei-cun/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="字符串方法">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JVM内存">
                         
-                        <span class="card-title">字符串方法</span>
+                        <span class="card-title">JVM内存</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、字符串的检索方法
-1、charAt()
-2、charCodeAt()
-3、indexOf()
-4、lastIndexOf()
-chatAt()
-语法：stringObject.charAt(index)
-功能：返回stringObjec
+                            栈（虚拟机栈）：存放局部变量，并且方法的运行一定在栈中堆：凡是new出来的东西都在栈中方法区：存储.class相关信息，包含方法的信息本地方法栈：与操作系统相关程序计数器（寄存器）：与cpu相关这五大内存区统称为运行时数据区其中栈，程序计数
                         
                     </div>
                     <div class="publish-info">
@@ -783,23 +829,11 @@ chatAt()
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Java基础
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            胡建德
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <span class="chip bg-color">字符串</span>
-                    </a>
-                    
                 </div>
                 
             </div>
