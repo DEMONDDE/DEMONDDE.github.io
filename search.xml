@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>redis</title>
+      <link href="/2020/06/05/redis/"/>
+      <url>/2020/06/05/redis/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol><li>字符串类型String</li><li>哈希类型 hash：map格式</li><li>列表类型list：linkedlist格式</li><li>集合类型set：</li><li>有序集合类型sortedset</li></ol><h1 id="常用存储操作"><a href="#常用存储操作" class="headerlink" title="常用存储操作"></a>常用存储操作</h1><p>文档：<a href="http://www.redis.cn/commands.html" target="_blank" rel="noopener">http://www.redis.cn/commands.html</a></p><h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><ol><li>存储：set key valu</li><li>获取：get key</li><li>删除：del key<h2 id="哈希类型"><a href="#哈希类型" class="headerlink" title="哈希类型"></a>哈希类型</h2></li><li>存储：hset key field value</li><li>获取：hget key field</li><li>删除：hdel key<h2 id="列表类型"><a href="#列表类型" class="headerlink" title="列表类型"></a>列表类型</h2></li><li>将元素加入类别左边：lpush key value</li><li>将元素加入类别右边：rpush key value</li><li>获取<ul><li>lrange key start end：范围获取</li></ul></li><li>删除<ul><li>lpop key:删除列表最左边元素，并将元素返回</li><li>rpop key:删除列表最右边元素，并将元素返回<h2 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h2></li></ul></li><li>存储：sadd key value</li><li>获取所有元素：smember key</li><li>删除某个元素：srem key value<h2 id="有序集合类型"><a href="#有序集合类型" class="headerlink" title="有序集合类型"></a>有序集合类型</h2></li><li>存储：zadd key score value</li><li>获取：zrange key start end</li><li>删除：zren key value<h2 id="通用类型"><a href="#通用类型" class="headerlink" title="通用类型"></a>通用类型</h2></li><li>查询所有键：keys *</li><li>获取键对应的value的类型：type key</li><li>删除指定的key value：del key</li></ol><h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><p>redis是内存数据库，当redis服务器重启，或电脑重启数据会丢失</p><p>redis持久化机制：<br>RDB：默认方式，在一段间隔的时间中检查key变化，然后持久化<br>AOF：日志记录方式，可以每一次命令操作后持久化数据</p><h1 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h1><p>创建连接池对象 new JedisPool<br>获取连接 getResource</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> rides </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库事务</title>
+      <link href="/2020/06/05/shu-ju-ku-shi-wu/"/>
+      <url>/2020/06/05/shu-ju-ku-shi-wu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="事务属性"><a href="#事务属性" class="headerlink" title="事务属性"></a>事务属性</h1><p>原子性：是不可分割的最小单位，要么同时成功要么同时失败<br>持久性：当事务提交或回滚后，数据库会持久化的保存数据<br>隔离性：多个事务直接，相互独立（真实情况下多个事务之间会有影响）<br>一致性：事务操作前后数据总量不变</p><h1 id="mysql开始事务"><a href="#mysql开始事务" class="headerlink" title="mysql开始事务"></a>mysql开始事务</h1><p>start TRANSACTION </p><p>提交<br><br>commit<br><br>回滚<br><br>rollback <br><br>回滚会还原到开启事务之前的状态</p><font color ='red'>在mysql数据库中事务默认自动提交一条DML（增删改）语句会自动提交一次事务</font><p>修改默认提交方式<br>set @@autocommit =   0 – 代表手动提交 1 –代表自动提交</p><h1 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h1><p>多个事务之间隔离的，相互独立，但如果多个事务操作同一批数据，则会引发一些问题</p><h2 id="存在问题："><a href="#存在问题：" class="headerlink" title="存在问题："></a>存在问题：</h2><p>脏读：一个事务读取到另一个书屋中没有提交的数据<br>不可重复读（虚读）：在同一个事务中两次读取到数据不一样<br>幻读：一个事务操作（DML）数据表中所有记录，另一个事务添加了一条数据，则第一个书屋查询不到自己的修改</p><h2 id="隔离级别"><a href="#隔离级别" class="headerlink" title="隔离级别"></a>隔离级别</h2><p>readuncommitted：读未提交</p><ul><li>产生问题：脏读，不可重复读，幻读</li></ul><p>read committed：读已提交（Oracle默认）</p><ul><li>产生问题：不可重复读，幻读</li></ul><p>repeatable read：可重复读（mysql默认）</p><ul><li>产生问题：幻读</li></ul><p>serializable：串行化</p><ul><li>可以解决所有问题</li></ul><font color='red'>注意：隔离级别从小到大安全性越来越高，但效率越来越低</font><p>数据库设置隔离级别</p><p>set global transaction isolation level 级别字符串</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java集合</title>
       <link href="/2020/05/31/java-ji-he/"/>
       <url>/2020/05/31/java-ji-he/</url>
@@ -21,6 +71,31 @@
         <tags>
             
             <tag> 集合 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二叉树</title>
+      <link href="/2020/05/31/er-cha-shu/"/>
+      <url>/2020/05/31/er-cha-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2-3查找树"><a href="#2-3查找树" class="headerlink" title="2-3查找树"></a>2-3查找树</h1><p>性质：</p><ol><li>任意空链接到根节点的路径长度都是相等的</li><li>4节点变换为3节点是，树的高度不会发生变化，只有当根节点是临时的4节点时，书高+1。</li><li>2-3树与普通二叉查找树最大的区别在于，普通的二叉查找树是自顶向下生长，而2-3树树自底向上生长</li></ol><h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><p>红黑树主要是对2-3树进行编码，红黑树背后的思想是用标准的二叉查找树和一些额外的信息来表示2-3树</p><p>红链接：将两个2-结点连接起来构成一个3-结点<br>黒链接：是2-3树中的普通链接</p><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ol><li>红链接均为左连接</li><li>没有任何一个节点同时和两个红链接相连</li><li>该树是完美的黑色平衡，既任意空链接到根节点的路径上黑链接数量相同</li></ol><h2 id="红黑树结点API"><a href="#红黑树结点API" class="headerlink" title="红黑树结点API"></a>红黑树结点API</h2><ol><li>public Node lef:记录左子结点<br /></li><li>public Node right:记录右子结点<br/></li><li>public Key key;存储键<br/></li><li>public Value value:存储值<br/></li><li>public boolean color:由其父结点指向它的链接的颜色</li></ol><p>注：有些红黑树的结点是红色和黑色而不是链接是红色或黑色<br>红色结点代表其父结点跟当且结点的链接是红色的</p><p>根节点颜色总是黑色</p><p>当结点右链接为红色则进行左旋</p><p>当结点左连接是红色并且左连接的左连接还是红色则右旋</p><p>当右旋后结点的左右链接都为红色则进行颜色翻转左右链接变为黑色，该节点变为红色</p><h1 id="B-树"><a href="#B-树" class="headerlink" title="B-树"></a>B-树</h1><p>B-树是M介树则每个节点存放的值不能超过M-1个</p><p>应用于磁盘</p><h1 id="B-树-1"><a href="#B-树-1" class="headerlink" title="B+树"></a>B+树</h1><p>B+树和B-树一样每个节点不可超过M-1个<br>B+树的非叶子节点不存放值只存放键</p><p>应用于数据库</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
             
         </tags>
       

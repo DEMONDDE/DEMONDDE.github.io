@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Java集合, Demon">
+    <meta name="keywords" content="redis, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Java集合 | Demon</title>
+    <title>redis | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Java集合</h1>
+                    <h1 class="description center-align post-title">redis</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9B%86%E5%90%88/">
-                                <span class="chip bg-color">集合</span>
+                            <a href="/tags/rides/">
+                                <span class="chip bg-color">rides</span>
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-31
+                    2020-06-05
                 </div>
                 
 
@@ -472,53 +472,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>集合分为collection和map，<br>Collection是单列集合类的接口，<br>Map是双列集合类的接口</p>
-<h1 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h1><p>collection实现接口有：List  ，Set，Queue</p>
-<p>注：在jdk1.5后添加的Queue</p>
-<h2 id="Collection常用方法"><a href="#Collection常用方法" class="headerlink" title="Collection常用方法"></a>Collection常用方法</h2><p><font color=#DC143C> 注意:Collection方法是没有带索引的方法的</font></p>
-<img src="/2020/05/31/java-ji-he/collection.png" class="">
-
-
-<h2 id="List接口："><a href="#List接口：" class="headerlink" title="List接口："></a>List接口：</h2><ol>
-<li><p>有序的集合</p>
-</li>
-<li><p>允许存储重复的元素</p>
-</li>
-<li><p>有索引，可以使用for循环</p>
-</li>
+                <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol>
+<li>字符串类型String</li>
+<li>哈希类型 hash：map格式</li>
+<li>列表类型list：linkedlist格式</li>
+<li>集合类型set：</li>
+<li>有序集合类型sortedset</li>
 </ol>
-<h3 id="List集合包括：ArrayList-，LinkedList，-Vector"><a href="#List集合包括：ArrayList-，LinkedList，-Vector" class="headerlink" title="List集合包括：ArrayList ，LinkedList， Vector"></a>List集合包括：ArrayList ，LinkedList， Vector</h3><ol>
-<li><p>ArrayList：底层是数组实现，查询快，增删慢</p>
+<h1 id="常用存储操作"><a href="#常用存储操作" class="headerlink" title="常用存储操作"></a>常用存储操作</h1><p>文档：<a href="http://www.redis.cn/commands.html" target="_blank" rel="noopener">http://www.redis.cn/commands.html</a></p>
+<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><ol>
+<li>存储：set key valu</li>
+<li>获取：get key</li>
+<li>删除：del key<h2 id="哈希类型"><a href="#哈希类型" class="headerlink" title="哈希类型"></a>哈希类型</h2></li>
+<li>存储：hset key field value</li>
+<li>获取：hget key field</li>
+<li>删除：hdel key<h2 id="列表类型"><a href="#列表类型" class="headerlink" title="列表类型"></a>列表类型</h2></li>
+<li>将元素加入类别左边：lpush key value</li>
+<li>将元素加入类别右边：rpush key value</li>
+<li>获取<ul>
+<li>lrange key start end：范围获取</li>
+</ul>
 </li>
-<li><p>LinkedList：底层是链表实现的，查询慢，增删快，包含大量操作首尾元素的方法</p>
+<li>删除<ul>
+<li>lpop key:删除列表最左边元素，并将元素返回</li>
+<li>rpop key:删除列表最右边元素，并将元素返回<h2 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h2></li>
+</ul>
 </li>
-<li><p>LinkedList还有一个 push（）和pop（）方法等同于addFirst（）和removeFirst（）；</p>
-</li>
-<li><p>Vector：底层结构是数组，线程安全的，增删慢，查询快（不常用）</p>
-</li>
+<li>存储：sadd key value</li>
+<li>获取所有元素：smember key</li>
+<li>删除某个元素：srem key value<h2 id="有序集合类型"><a href="#有序集合类型" class="headerlink" title="有序集合类型"></a>有序集合类型</h2></li>
+<li>存储：zadd key score value</li>
+<li>获取：zrange key start end</li>
+<li>删除：zren key value<h2 id="通用类型"><a href="#通用类型" class="headerlink" title="通用类型"></a>通用类型</h2></li>
+<li>查询所有键：keys *</li>
+<li>获取键对应的value的类型：type key</li>
+<li>删除指定的key value：del key</li>
 </ol>
-<p><font color=#DC143C>注意：当使用集合特有方法将无法使用多态</font></p>
-<img src="/2020/05/31/java-ji-he/list.png" class="">
+<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><p>redis是内存数据库，当redis服务器重启，或电脑重启数据会丢失</p>
+<p>redis持久化机制：<br>RDB：默认方式，在一段间隔的时间中检查key变化，然后持久化<br>AOF：日志记录方式，可以每一次命令操作后持久化数据</p>
+<h1 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h1><p>创建连接池对象 new JedisPool<br>获取连接 getResource</p>
 
-<p>注：void add(int index, E element)在列表的指定位置插入指定元素（可选操作）。将当前处于该位置的元素（如果有的话）和所有后续元素向右移动（在其索引中加 1）</p>
-<h2 id="Set接口："><a href="#Set接口：" class="headerlink" title="Set接口："></a>Set接口：</h2><ol>
-<li>不允许存储重复元素如果添加的是已有的数据， 会用现在的值替换原来的值，并返回原来的值</li>
-<li>没有索引，所以不能有for循环</li>
-</ol>
-<h3 id="Set集合包括：HashSet，-LinkedHashSet，-TreeSet"><a href="#Set集合包括：HashSet，-LinkedHashSet，-TreeSet" class="headerlink" title="Set集合包括：HashSet， LinkedHashSet， TreeSet"></a>Set集合包括：HashSet， LinkedHashSet， TreeSet</h3><p>  HashSet：底层是哈希表和红黑树实现的，无索引，不可以存储重复元素，存取无序，存储元素和取出元素可能不一致，查询速度非常快。</p>
-<p>注：当HashSet存储自定义类型元素如String，Integer，Student，Pojo类等</p>
-<p>需要重写hashcode（）和equals（）方法，防止出现对象属性相同但依旧可以存储的情况，应为当自定义的对象的属性相同应该视为同一个对象。</p>
-<p>LinkedHashSet：底层是哈希表和链表实现的，无索引，不可以存储重复元素，可以保证存取顺序</p>
-<p>TreeSet：底层是二叉树实现，一般用于排序</p>
-<p>在jdk1.8之前 ：哈希表=数组+链表</p>
-<p>在jdk1.8之后：哈希表=数组+链表 或 哈希表=数组+红黑树</p>
-<h2 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h2><p>  由于大多数资料没有详细介绍Queue接口所以我单独写了笔记进行介绍</p>
-<h1 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h1><p>Map集合键存储键值对，键不可以重复，但值可以重复，但一个键对应一个值</p>
-<p>键和值的数据类型可以相同，也可以不相同</p>
-<p>当添加重复值会替换掉原来的值会返回旧值如果之前不存在则返回null</p>
-<p>注：在Map接口中有一个内部接口Entry，用来记录键与值</p>
-<p>Map实现子类常用的有 HashMap， LinkedHashMap</p>
-<p><img src="/2020/05/31/java-ji-he/map.png" class="" title="}&lt;&#x2F;p&gt; &lt;h2 id&#x3D;HashMap：&gt;&lt;a href&#x3D;#HashMap： class&#x3D;headerlink title&#x3D;HashMap：&gt;&lt;&#x2F;a&gt;HashMap：&lt;&#x2F;h2&gt;&lt;p&gt;1.HashMap集合底层是哈希表，查询速度特别快&lt;&#x2F;p&gt; &lt;p&gt;jdk1.8之前：数组+单向链表&lt;&#x2F;p&gt; &lt;p&gt;jdk1.8之后：数组+单向链表&#x2F;红黑树&lt;&#x2F;p&gt; &lt;p&gt;2.HashMap是一个无序的集合，存储元素和取出元素顺序很可能不一致&lt;&#x2F;p&gt; &lt;p&gt;注：当HashMap存储自定义类型元素作为键时，需要重写hashcode（）和equals（）方法，防止出现对象属性相同但依旧可以存储的情况，应为当自定义的对象的属性相同应该视为同一个对象。&lt;&#x2F;p&gt; &lt;h2 id&#x3D;LinkedHashMap：&gt;&lt;a href&#x3D;#LinkedHashMap： class&#x3D;headerlink title&#x3D;LinkedHashMap：&gt;&lt;&#x2F;a&gt;LinkedHashMap：&lt;&#x2F;h2&gt;&lt;p&gt;1.LinkedHashMap集合底层是哈希表+链表&lt;&#x2F;p&gt; &lt;p&gt;2.LinkHashMap集合底层是有序的集合，存储元素和取出元素顺序是一致&lt;&#x2F;p&gt; &lt;p&gt;3.LinkedHashMap可以根据访问顺序和插入顺序进行排序&lt;&#x2F;p&gt; &lt;h2 id&#x3D;HashTable：&gt;&lt;a href&#x3D;#HashTable： class&#x3D;headerlink title&#x3D;HashTable：&gt;&lt;&#x2F;a&gt;HashTable：&lt;&#x2F;h2&gt;&lt;p&gt;1.键和值都不能为null&lt;&#x2F;p&gt; &lt;p&gt;2.是线程安全的，速度慢&lt;&#x2F;p&gt;">
             </div>
             <hr/>
 
@@ -543,7 +536,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/31/java-ji-he/">http://yoursite.com/2020/05/31/java-ji-he/</a>
+                    <a href="http://yoursite.com/2020/06/05/redis/">http://yoursite.com/2020/06/05/redis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -581,8 +574,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9B%86%E5%90%88/">
-                                    <span class="chip bg-color">集合</span>
+                                <a href="/tags/rides/">
+                                    <span class="chip bg-color">rides</span>
                                 </a>
                             
                         </div>
@@ -750,9 +743,67 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/06/05/redis/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="redis">
+                        
+                        <span class="card-title">redis</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            数据类型
+字符串类型String
+哈希类型 hash：map格式
+列表类型list：linkedlist格式
+集合类型set：
+有序集合类型sortedset
+
+常用存储操作文档：http://www.redis.cn/commands.h
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Java基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/rides/">
+                        <span class="chip bg-color">rides</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/06/05/shu-ju-ku-shi-wu/">
                     <div class="card-image">
@@ -771,9 +822,9 @@ mysql开始事务start
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -791,59 +842,6 @@ mysql开始事务start
                     
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                         <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/31/er-cha-shu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="二叉树">
-                        
-                        <span class="card-title">二叉树</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            2-3查找树性质：
-
-任意空链接到根节点的路径长度都是相等的
-4节点变换为3节点是，树的高度不会发生变化，只有当根节点是临时的4节点时，书高+1。
-2-3树与普通二叉查找树最大的区别在于，普通的二叉查找树是自顶向下生长，而2-3树树自底向上
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Java基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                        <span class="chip bg-color">数据结构</span>
                     </a>
                     
                 </div>
