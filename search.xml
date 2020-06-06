@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Nginx使用</title>
+      <link href="/2020/06/06/nginx-shi-yong/"/>
+      <url>/2020/06/06/nginx-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>访问nginx,但是nginx把请求交给tomcat来做</p><p>然后修改nginx.conf，主要是30-42行</p><pre><code>        location / {            proxy_pass http://127.0.0.1:8111;    }    //location / 表示处理所有请求    //proxy_pass http://127.0.0.1:8111; 表示把请求都交给http://127.0.0.1:8111来处理</code></pre><h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>css, js之类的都交给nginx来处理，nginx处理不了的，比如jsp 就交给tomcat来处理~</p><p>在locaction下面添加一个新的location:</p><pre><code>        location ~\.(css|js|png)$ {            root C:/Users/X7TI/Downloads/tomcat_8111/webapps/ROOT;            }    //这表示所有的css js png访问都由nginx来做，访问的地址是    //C:/Users/X7TI/Downloads/tomcat_8111/webapps/ROOT    //这里要注意，填写本地地址的时候，要用正斜杠 / 不要用反斜杠 \</code></pre><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>负载均衡的概念就是当访问量很大的时候，一个 Tomcat 吃不消了，这时候就准备多个 Tomcat，由Nginx按照权重来对请求进行分配，从而缓解单独一个Tomcat受到的压力</p><p>首先增加一个upstream ，用来指向这两个tomcat</p><pre><code>  upstream tomcat_8111_8222{    server    127.0.0.1:8111 weight=1;    server    127.0.0.1:8222 weight=2;    }</code></pre><p>然后修改location，反向代理到上述配置。</p><pre><code>        location / {            proxy_pass http://tomcat_8111_8222;    }</code></pre><p>weight表示权重，值越大，被分配到的几率越大</p><h2 id="session共享"><a href="#session共享" class="headerlink" title="session共享"></a>session共享</h2><p>将session信息存到rides中需要取的时候，也从Redis上取。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>redis</title>
       <link href="/2020/06/05/redis/"/>
       <url>/2020/06/05/redis/</url>

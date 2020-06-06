@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="redis, Demon">
+    <meta name="keywords" content="Nginx使用, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>redis | Demon</title>
+    <title>Nginx使用 | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">redis</h1>
+                    <h1 class="description center-align post-title">Nginx使用</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/rides/">
-                                <span class="chip bg-color">rides</span>
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
+                            </a>
+                        
+                            <a href="/tags/nginx/">
+                                <span class="chip bg-color">nginx</span>
                             </a>
                         
                     </div>
@@ -443,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                Java基础
+                            <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
+                                Web基础
                             </a>
                         
                     </div>
@@ -456,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-05
+                    2020-06-06
                 </div>
                 
 
@@ -472,45 +476,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol>
-<li>字符串类型String</li>
-<li>哈希类型 hash：map格式</li>
-<li>列表类型list：linkedlist格式</li>
-<li>集合类型set：</li>
-<li>有序集合类型sortedset</li>
-</ol>
-<h1 id="常用存储操作"><a href="#常用存储操作" class="headerlink" title="常用存储操作"></a>常用存储操作</h1><p>文档：<a href="http://www.redis.cn/commands.html" target="_blank" rel="noopener">http://www.redis.cn/commands.html</a></p>
-<h2 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h2><ol>
-<li>存储：set key valu</li>
-<li>获取：get key</li>
-<li>删除：del key<h2 id="哈希类型"><a href="#哈希类型" class="headerlink" title="哈希类型"></a>哈希类型</h2></li>
-<li>存储：hset key field value</li>
-<li>获取：hget key field</li>
-<li>删除：hdel key<h2 id="列表类型"><a href="#列表类型" class="headerlink" title="列表类型"></a>列表类型</h2></li>
-<li>将元素加入类别左边：lpush key value</li>
-<li>将元素加入类别右边：rpush key value</li>
-<li>获取<ul>
-<li>lrange key start end：范围获取</li>
-</ul>
-</li>
-<li>删除<ul>
-<li>lpop key:删除列表最左边元素，并将元素返回</li>
-<li>rpop key:删除列表最右边元素，并将元素返回<h2 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h2></li>
-</ul>
-</li>
-<li>存储：sadd key value</li>
-<li>获取所有元素：smember key</li>
-<li>删除某个元素：srem key value<h2 id="有序集合类型"><a href="#有序集合类型" class="headerlink" title="有序集合类型"></a>有序集合类型</h2></li>
-<li>存储：zadd key score value</li>
-<li>获取：zrange key start end</li>
-<li>删除：zren key value<h2 id="通用类型"><a href="#通用类型" class="headerlink" title="通用类型"></a>通用类型</h2></li>
-<li>查询所有键：keys *</li>
-<li>获取键对应的value的类型：type key</li>
-<li>删除指定的key value：del key</li>
-</ol>
-<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><p>redis是内存数据库，当redis服务器重启，或电脑重启数据会丢失</p>
-<p>redis持久化机制：<br>RDB：默认方式，在一段间隔的时间中检查key变化，然后持久化<br>AOF：日志记录方式，可以每一次命令操作后持久化数据</p>
-<h1 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h1><p>创建连接池对象 new JedisPool<br>获取连接 getResource</p>
+                <h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>访问nginx,但是nginx把请求交给tomcat来做</p>
+<p>然后修改nginx.conf，主要是30-42行</p>
+<pre><code>        location / {
+            proxy_pass http://127.0.0.1:8111;
+    }
+    //location / 表示处理所有请求
+    //proxy_pass http://127.0.0.1:8111; 表示把请求都交给http://127.0.0.1:8111来处理</code></pre><h2 id="动静分离"><a href="#动静分离" class="headerlink" title="动静分离"></a>动静分离</h2><p>css, js之类的都交给nginx来处理，nginx处理不了的，比如jsp 就交给tomcat来处理~</p>
+<p>在locaction下面添加一个新的location:</p>
+<pre><code>        location ~\.(css|js|png)$ {
+            root C:/Users/X7TI/Downloads/tomcat_8111/webapps/ROOT;
+            }
+
+    //这表示所有的css js png访问都由nginx来做，访问的地址是
+    //C:/Users/X7TI/Downloads/tomcat_8111/webapps/ROOT
+    //这里要注意，填写本地地址的时候，要用正斜杠 / 不要用反斜杠 \
+</code></pre><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>负载均衡的概念就是当访问量很大的时候，一个 Tomcat 吃不消了，这时候就准备多个 Tomcat，由Nginx按照权重来对请求进行分配，从而缓解单独一个Tomcat受到的压力</p>
+<p>首先增加一个upstream ，用来指向这两个tomcat</p>
+<pre><code>  upstream tomcat_8111_8222{
+    server    127.0.0.1:8111 weight=1;
+    server    127.0.0.1:8222 weight=2;
+    }</code></pre><p>然后修改location，反向代理到上述配置。</p>
+<pre><code>        location / {
+            proxy_pass http://tomcat_8111_8222;
+    }</code></pre><p>weight表示权重，值越大，被分配到的几率越大</p>
+<h2 id="session共享"><a href="#session共享" class="headerlink" title="session共享"></a>session共享</h2><p>将session信息存到rides中需要取的时候，也从Redis上取。</p>
 
             </div>
             <hr/>
@@ -536,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/06/05/redis/">http://yoursite.com/2020/06/05/redis/</a>
+                    <a href="http://yoursite.com/2020/06/06/nginx-shi-yong/">http://yoursite.com/2020/06/06/nginx-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,8 +564,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/rides/">
-                                    <span class="chip bg-color">rides</span>
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
+                                </a>
+                            
+                                <a href="/tags/nginx/">
+                                    <span class="chip bg-color">nginx</span>
                                 </a>
                             
                         </div>
@@ -743,9 +737,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/06/06/nginx-shi-yong/">
                     <div class="card-image">
@@ -766,9 +761,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -781,6 +776,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -803,20 +799,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/05/shu-ju-ku-shi-wu/">
+                <a href="/2020/06/05/redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="数据库事务">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="redis">
                         
-                        <span class="card-title">数据库事务</span>
+                        <span class="card-title">redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            事务属性原子性：是不可分割的最小单位，要么同时成功要么同时失败持久性：当事务提交或回滚后，数据库会持久化的保存数据隔离性：多个事务直接，相互独立（真实情况下多个事务之间会有影响）一致性：事务操作前后数据总量不变
-mysql开始事务start
+                            数据类型
+字符串类型String
+哈希类型 hash：map格式
+列表类型list：linkedlist格式
+集合类型set：
+有序集合类型sortedset
+
+常用存储操作文档：http://www.redis.cn/commands.h
                         
                     </div>
                     <div class="publish-info">
@@ -838,8 +840,8 @@ mysql开始事务start
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/rides/">
+                        <span class="chip bg-color">rides</span>
                     </a>
                     
                 </div>
