@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Nginx location的root问题</title>
+      <link href="/2020/06/13/nginx-location-de-root-wen-ti/"/>
+      <url>/2020/06/13/nginx-location-de-root-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="root"><a href="#root" class="headerlink" title="root"></a>root</h2><p>location root属性会对拦截的路径进行拼接如</p><p>当location拦截路径为 /test/时<br>客户端请求连接为 <a href="http://localhost/test/aa/1.txt" target="_blank" rel="noopener">http://localhost/test/aa/1.txt</a><br>而root 为 /var/ss<br>最终结果为 /var/ss/test/1.txt<br>此时会将/test/之后包括/test/添加到test之后</p><p>当location拦截路径为/时<br>客户端请求连接为 <a href="http://localhost/test/aa/1.txt" target="_blank" rel="noopener">http://localhost/test/aa/1.txt</a><br>root设置为 /var/ss<br>最后结果为/var/ss/test/aa/1.txt<br>此时会将除<a href="http://localhost外所有拼接到root路径后" target="_blank" rel="noopener">http://localhost外所有拼接到root路径后</a></p><p>当按文件名进行匹配时，当页面链接如 href= css/a.css时<br>此时当发送请求时浏览器会自动添加其项目名<br><br><br>该请求链接完整是<font color ='red'> http:/地址/项目名/css/a.css</font><br><br>当root路径为/var/ss或http:localhost/<br><br>此时真实路径为/var/ss/css/a.css<br><br>nginx会将请求除http:/地址/之外的所有添加到root后面<br><br>所以最后结果为 /var/ss/项目名/css/a.css<br><br>这时真实路径下/css/a.css在ss文件夹下，并不在项目名文件夹下，所以浏览器会获取不到，需要在/ss/目录下创建和该项目同名的文件这是才会和最终路径匹配</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Nginx使用</title>
       <link href="/2020/06/06/nginx-shi-yong/"/>
       <url>/2020/06/06/nginx-shi-yong/</url>
@@ -73,6 +98,31 @@
         <tags>
             
             <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于在SSM框架使用Filter</title>
+      <link href="/2020/06/01/guan-yu-zai-ssm-kuang-jia-shi-yong-filter/"/>
+      <url>/2020/06/01/guan-yu-zai-ssm-kuang-jia-shi-yong-filter/</url>
+      
+        <content type="html"><![CDATA[<p>由于Filter创建优先于Spring的实例所以在Filter进行依赖注入是不行的需要使用拦截器</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSM </tag>
             
         </tags>
       

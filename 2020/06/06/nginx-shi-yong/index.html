@@ -737,33 +737,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/06/nginx-shi-yong/">
+                <a href="/2020/06/13/nginx-location-de-root-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Nginx使用">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Nginx location的root问题">
                         
-                        <span class="card-title">Nginx使用</span>
+                        <span class="card-title">Nginx location的root问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            反向代理访问nginx,但是nginx把请求交给tomcat来做
-然后修改nginx.conf，主要是30-42行
-        location / {
-            proxy_pass http://127.0.0.1:8
+                            rootlocation root属性会对拦截的路径进行拼接如
+当location拦截路径为 /test/时客户端请求连接为 http://localhost/test/aa/1.txt而root 为 /var/ss最终结果为 /var/s
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -776,16 +773,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
-                    </a>
-                    
-                    <a href="/tags/nginx/">
-                        <span class="chip bg-color">nginx</span>
+                    <a href="/tags/Nginx/">
+                        <span class="chip bg-color">Nginx</span>
                     </a>
                     
                 </div>

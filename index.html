@@ -554,6 +554,54 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2020/06/13/nginx-location-de-root-wen-ti/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Nginx location的root问题">
+                            
+                            <span class="card-title">Nginx location的root问题</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                rootlocation root属性会对拦截的路径进行拼接如
+当location拦截路径为 /test/时客户端请求连接为 http://localhost/test/aa/1.txt而root 为 /var/ss最终结果为 /var/s
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Web基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Nginx/">
+                            <span class="chip bg-color">Nginx</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2020/06/06/nginx-shi-yong/">
                         <div class="card-image">
                             
@@ -701,6 +749,54 @@ mysql开始事务start
                         
                         <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                             <span class="chip bg-color">数据库</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2020/06/01/guan-yu-zai-ssm-kuang-jia-shi-yong-filter/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="关于在SSM框架使用Filter">
+                            
+                            <span class="card-title">关于在SSM框架使用Filter</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                由于Filter创建优先于Spring的实例所以在Filter进行依赖注入是不行的需要使用拦截器
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-01
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Web基础
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/SSM/">
+                            <span class="chip bg-color">SSM</span>
                         </a>
                         
                     </div>
@@ -1020,62 +1116,34 @@ protected void doPost(HttpServletRequest request, HttpServletRespons
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/05/30/wen-jian-shang-chuan/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="文件上传">
-                            
-                            <span class="card-title">文件上传</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                实现文件上传必须把设置为enctype=”multipart/form-data” 请求方式为post如
- &lt;form id=""   action="" method="post"  enctype="multipart/form-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Web基础
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Web/">
-                            <span class="chip bg-color">Web</span>
-                        </a>
-                        
-                        <a href="/tags/SSM/">
-                            <span class="chip bg-color">SSM</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
 </main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a class="left btn-floating btn-large disabled">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">1 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a href="/page/2/"
+               class="right btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-right"></i>
+            </a>
+            
+        </div>
+    </div>
+</div>
 
 
 
