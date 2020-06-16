@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-13T10:03:52.569Z</updated>
+  <updated>2020-06-16T01:14:40.440Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>运输层</title>
+    <link href="http://yoursite.com/2020/09/07/yun-shu-ceng/"/>
+    <id>http://yoursite.com/2020/09/07/yun-shu-ceng/</id>
+    <published>2020-09-07T01:25:00.000Z</published>
+    <updated>2020-06-16T01:14:40.440Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;运输层&quot;&gt;&lt;a href=&quot;#运输层&quot; class=&quot;headerlink&quot; title=&quot;运输层&quot;&gt;&lt;/a&gt;运输层&lt;/h2&gt;&lt;p&gt;为进程提供端到端的逻辑通信&lt;/p&gt;
+&lt;p&gt;端口用一个16位端口号进行标识&lt;/p&gt;
+&lt;h3 id=&quot;UDP&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Nginx location的root问题</title>
