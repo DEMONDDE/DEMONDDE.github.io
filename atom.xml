@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-16T01:14:40.440Z</updated>
+  <updated>2020-06-19T06:18:15.601Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>应用层</title>
+    <link href="http://yoursite.com/2020/09/07/ying-yong-ceng/"/>
+    <id>http://yoursite.com/2020/09/07/ying-yong-ceng/</id>
+    <published>2020-09-07T01:25:00.000Z</published>
+    <updated>2020-06-19T06:18:15.601Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;应用层&quot;&gt;&lt;a href=&quot;#应用层&quot; class=&quot;headerlink&quot; title=&quot;应用层&quot;&gt;&lt;/a&gt;应用层&lt;/h2&gt;&lt;h3 id=&quot;域名系统DNS&quot;&gt;&lt;a href=&quot;#域名系统DNS&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>运输层</title>
@@ -397,9 +424,9 @@
       <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
-    
       <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
     
   </entry>
   
