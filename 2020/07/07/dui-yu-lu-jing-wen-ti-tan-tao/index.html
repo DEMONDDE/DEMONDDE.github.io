@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="网路层, Demon">
+    <meta name="keywords" content="对于路径问题探讨, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>网路层 | Demon</title>
+    <title>对于路径问题探讨 | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">网路层</h1>
+                    <h1 class="description center-align post-title">对于路径问题探讨</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">计算机网络</span>
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
                             </a>
                         
                     </div>
@@ -443,8 +443,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                Java基础
+                            <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
+                                Web基础
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-05
+                    2020-07-07
                 </div>
                 
 
@@ -472,99 +472,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><h3 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h3><p>32位组成，分为网络号和主机号</p>
-<h4 id="各类IP地址"><a href="#各类IP地址" class="headerlink" title="各类IP地址"></a>各类IP地址</h4><ol>
-<li>A类地址为网络号8位开头为0，第一个可指派网络号1，最后一个可指派网络号126</li>
-<li>B类地址网络号16位开头为10，第一个可指派网络号128.1，最后一个可指派网络号191.255</li>
-<li>C类地址网络号24位开头为110，第一个可指派网络号192.0.1，最后一个可指派网络号223.255.255</li>
-</ol>
-<p>通常将8位为一组转换为10进制数</p>
-<h4 id="特殊的IP地址"><a href="#特殊的IP地址" class="headerlink" title="特殊的IP地址"></a>特殊的IP地址</h4><ol>
-<li>网络号全0和主机号全0，值本网络上的本主机<br>源地址可以使用，目的地址不可使用</li>
-<li>网络号全0，指在本网络上的某台主机，源地址可以使用，目的地址不可使用</li>
-<li>网络号全1主机号全1，指对本网络上所有主机进行广播，源地址不可使用，目的地址可以使用</li>
-<li>主机号全1，对相应网络上的所有主机进行广播，源地址不可使用，目的地址可以使用</li>
-<li>网络号127，主机号非全0或全1的任何数，用于本地软件的环回测试<h3 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h3>作用：从网络层使用的ip地址，解析出在数据链路层所使用的硬件地址</li>
-</ol>
-<p>每个主机都设有一个ARP高速缓存，里面有所在局域网上的各主机和路由器IP地址到硬件地址映射表</p>
-<p>当主机向本局域网发送IP数据报时，先从ARP高速缓存中查看有无目的主机的IP地址，如果有，就查出对应硬件地址，如果没有，就在本局域网广播发送一个ARP请求分组，得到ARP响应分组后，将得到的IP地址到硬件地址的映射写入ARP高速缓存</p>
-<h3 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h3><p>在IP地址中增加一个子网号字段使两级的IP变为三级IP地址</p>
-<p>从主机号借用若干位作为子网号</p>
-<p>从其他网络发送给本单位某个主机的IP数据包，先找到本单位网络上的路由器，然后此路由器在收到IP数据报后，再按目的网络号和子网号找到目的子网最后将IP数据包交付目的主机</p>
-<p>使用子网掩码可以找出IP地址中的子网部分</p>
-<ol>
-<li>子网掩码长度32位</li>
-<li>子网掩码左边部分一串1，对应网络号和子网号</li>
-<li>子网掩码右边部分一串0，对应于主机号</li>
-</ol>
-<p>注：根据互联网标准协议，子网号不能全0或全1，但随着无份类域间路由选择CIDR的广泛使用，现在全0或全1的子网号也可以使用</p>
-<p>子网划分增加类灵活性但也减少了主机数</p>
-<h4 id="无分类域间路由选择CIDR"><a href="#无分类域间路由选择CIDR" class="headerlink" title="无分类域间路由选择CIDR"></a>无分类域间路由选择CIDR</h4><p>使用各种长度的网络前缀来代替分类地址中的网络号和子网号</p>
-<p>IP地址从三级编址又回到了两级编址</p>
-<p>CIDR使用斜线记法，又称为CIDR记法，在IP地址后加上一个斜线，然后写上网络前缀所占位数</p>
-<p>CIDR把网络前缀都相同的连续IP地址组成CIDR地址块</p>
-<p>路由聚合：</p>
-<ol>
-<li>一个CIDR地址块可以表示很多地址，这种地址的聚合常称为路由聚合，它使路由表中的一个项目可以表示很多个原来传统分类地址的路由</li>
-<li>路由聚合有利于减少路由器之间的路由选择信息交换，从而提高了整个互联网的性能</li>
-<li>路由聚合也成为构成超网</li>
-</ol>
-<p>最长前缀匹配：使用CIDR时路由表中，在查找路由表时可能会得到不止一个匹配结果，应当从匹配结果中选择具有最长网络前缀的路由这种方式称为，最长前缀匹配</p>
-<h3 id="网际控制报文协议ICMP"><a href="#网际控制报文协议ICMP" class="headerlink" title="网际控制报文协议ICMP"></a>网际控制报文协议ICMP</h3><p>为了更有效的转发IP数据报和提高交付成功的机会，在网际层使用ICMP，ICMP允许主机或路由器报告差错情况和提供有关异常情况的报告</p>
-<h3 id="网际组管理协议IGMP"><a href="#网际组管理协议IGMP" class="headerlink" title="网际组管理协议IGMP"></a>网际组管理协议IGMP</h3><p>作用于多播中，多播数据包也是尽最大努力交付，不保证一定能够交付多播组内的所有成员，对多播数据报不产生ICMP差错报是否有主机（严格讲，是主机上某个进程）参加或退出了莫格多播组</p>
-<p>IGMP协议是让连接在本地局域网上的多播路由器知道本局域网上shi</p>
-<h3 id="内部网关协议IGP"><a href="#内部网关协议IGP" class="headerlink" title="内部网关协议IGP"></a>内部网关协议IGP</h3><h4 id="路由信息协议RIP"><a href="#路由信息协议RIP" class="headerlink" title="路由信息协议RIP"></a>路由信息协议RIP</h4><p>是一种分布式，基于距离向量的路由选择协议</p>
-<p>RIP要求网络中的每一个路由器都要维护从它自己到其他每一个目的网络的距离记录</p>
-<p>RIP允许一条路径最多只能包含15个路由器，距离最大值为16即相当于不可达</p>
-<p>RIP不能在两个网络之间同时使用多条路由<br>特点：</p>
-<ol>
-<li>仅和相邻路由器交换信息</li>
-<li>交换的信息是当前本路由器所知道的全部信息</li>
-<li>按固定的时间间隔交换</li>
-</ol>
-<p>存在问题：当网络出现故障时，要经过比较长的时间才能将此信息传到所有路由器<br>优点：实现简单，开销小</p>
-<p>缺点：</p>
-<ol>
-<li>限制了网络的规模</li>
-<li>路由器之间交换的路由信息是路由器中完整的路由表，因而随着网络规模的扩大，开销也就增加</li>
-<li>坏消息传得慢，使更新过程的收敛时间 过长</li>
-</ol>
-<h4 id="内部网关协议OSPF"><a href="#内部网关协议OSPF" class="headerlink" title="内部网关协议OSPF"></a>内部网关协议OSPF</h4><p>开放最短路径优先<br>OSPF不用UDP而是直接用IP数据报传送</p>
-<p>OSPF规定每隔一段时间，要刷新一次数据库中的链路状态</p>
-<p>当互联网规模很大时，OSPF协议要比距离向量协议RIP好的多</p>
-<h3 id="外部网关协议EGP"><a href="#外部网关协议EGP" class="headerlink" title="外部网关协议EGP"></a>外部网关协议EGP</h3><h4 id="边界网关协议BGP"><a href="#边界网关协议BGP" class="headerlink" title="边界网关协议BGP"></a>边界网关协议BGP</h4><p>力求寻找一条能够达到目的网络且比较好的路由，并非要寻找一条最佳路由</p>
-<p>BGP支持CIDR，在BGP刚刚运行时，BGP的邻站时交换整个BGP路由表，但以后只需要在发生变化时更新有变化的部分。这样做对节省网络带宽和减少路由器开销都有好处</p>
-<h4 id="虚拟专用网VPN"><a href="#虚拟专用网VPN" class="headerlink" title="虚拟专用网VPN"></a>虚拟专用网VPN</h4><p>在RFC1918指明了一些专用地址。专用地址只能用作本地地址而不能用作全球地址。在互联网中的所有路由器，对目的地址是专用地址的数据报一律不进行转发</p>
-<p>三个专用地址块：</p>
-<ol>
-<li>10.0.0.0到10.255.255.255</li>
-<li>172.16.0.0到172.31.255.255</li>
-<li>192.168.0.0到192.168.255.255</li>
-</ol>
-<p>采用这样的专用IP地址的互联网络称为专用互联网或本地互联网，简单些叫专用网</p>
-<p>因为这些专用地址尽在本机构内部使用，专用IP地址也叫做可重用地址</p>
-<p>远程接入VPN可以满足外部流动员工访问公司网络需求，专用的VPN软件可以在员工PC机和公司的主机之间建立VPN隧道</p>
-<h3 id="网络地址转换NAT"><a href="#网络地址转换NAT" class="headerlink" title="网络地址转换NAT"></a>网络地址转换NAT</h3><p>在专用网连接到互联网的路由器上安装NAT软件。装有NAT软件的路由器叫NAT路由器，他<br><font color = 'red'><br>至少有一个有效的外部全球IP地址。<br></font><br>所有使用本地地址的主机在和外界通信时，都要在NAT路由器上<br><font color = 'red'><br>将其本地地址转换成全球IP地址，才能和互联网互联<br></font></p>
-<p>为了更加有效的利用NAT路由器上的全球IP地址，现在常用的NAT转换表把运输层端口号也利用上。这样，就可以使多个拥有本地地址的主机，共用一个NAT路由器的全球IP地址。使用端口号NAT叫做网络地址与端口号转换NAPT</p>
-<h3 id="多协议标记交换MPLS"><a href="#多协议标记交换MPLS" class="headerlink" title="多协议标记交换MPLS"></a>多协议标记交换MPLS</h3><p>为每个分组携带一个整数标记，当分组达到交换机时，交换机读取分组标记，并用标记值来检索分组转发表。</p>
-<p>MPLS并没有取代IP，而是作为一种IP增强技术。</p>
-<p>特点：</p>
-<ol>
-<li>支持面向连接的服务质量。</li>
-<li>支持流量工程，平衡网络负载。</li>
-<li>有效地支持虚拟专用网VPN</li>
-</ol>
-<p>原理：<br>在MPLS入口处，给每一个IP数据报打上固定长度标记，然后对打上标记的IP数据包用硬件进行转发。<br>采用硬件技术对打上标记的IP数据报进行转发就成为标记交换。</p>
-<p>交换也表示在转发时不再上升到第三层查找转发表，而是而是根据标记在第二层（链路层）用硬件进行转发</p>
-<p>支持MPLS技术的标记交换路由器LSR</p>
-<p>LSR同时具有标记交换和路由选择两种功能，标记交换功能是为了快速转发，<br><font color = 'red'><br>但在这之前LSR需要使用路由选择功能构造转发表<br></font></p>
-<p>工作过程：</p>
-<ol>
-<li>MPLS域中的各LSR使用专门的标记分配协议LDP交换报文，并找出标记交换路径LSP。各LSR根据这些路径构造出分组转发表。</li>
-<li>分组进入MPLS域时，MPLS入口节点把分组打上标记，并按照转发表将分组转发给下一个LSR。给IP数据报打标记的过程叫做分类</li>
-</ol>
-<p>转发等价类就是路由器按照同样方式对待分组的集合</p>
-<p>按照同样方式对待表示：从同样接口转发到同样下一跳地址，并且具有同样服务类别和同样丢弃优先级等</p>
+                <p>在前端书写路径如添加css，js，或servlet等可以使用绝对路径或相对路径。</p>
+<p>相对路径是以本资源文件所在路径为根路径</p>
+<p>注意:</p>
+<p>当我们把jsp，html等页面放在web－inf中我们是无法直接访问的，所以我们一般通过controller等方式转发来访问，在这时如果<br>css，js等文件在web－inf里是无法引入到jsp文件里的，如果放到web－inf外，当使用相对路径是不是以资源文件所在路径为根路径，而是以请求链接controller的路径为根路径<br>如当到us.jsp的controller路径为/con/us<br>那么相对路径的根路径就是/con，</p>
+<p>所以jsp放web－inf里时尽量用绝对路径</p>
+<p>绝对路径以项目为根路径</p>
+<p>注意:<br>在前端中绝对路径的根路径是以服务器为根路径的</p>
+<p>注意2:当在前端使用相对路径时会自动加上项目名</p>
 
             </div>
             <hr/>
@@ -590,7 +505,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/05/wang-lu-ceng/">http://yoursite.com/2020/05/05/wang-lu-ceng/</a>
+                    <a href="http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/">http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -628,8 +543,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">计算机网络</span>
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
                                 </a>
                             
                         </div>
@@ -801,32 +716,40 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/30/wen-jian-shang-chuan/">
+                <a href="/2020/09/07/yun-shu-ceng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="文件上传">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="运输层">
                         
-                        <span class="card-title">文件上传</span>
+                        <span class="card-title">运输层</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            实现文件上传必须把设置为enctype=”multipart/form-data” 请求方式为post如
- &lt;form id=""   action="" method="post"  enctype="multipart/form-
+                            运输层为进程提供端到端的逻辑通信
+端口用一个16位端口号进行标识
+UDP
+无连接协议，提供无连接服务
+其传送的运输协议数据单元TPDU时UDP报文或用户数据报
+支持单播，多播，广播
+不提供可靠交付
+简单适用于很多应用
+
+UDP是面向报文的，
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Web基础
+                            <a href="/categories/Java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Java基础
                                 </a>
                             
                             
@@ -836,12 +759,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Web/">
-                        <span class="chip bg-color">Web</span>
-                    </a>
-                    
-                    <a href="/tags/SSM/">
-                        <span class="chip bg-color">SSM</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
@@ -852,31 +771,34 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/05/wang-lu-ceng/">
+                <a href="/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="网路层">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="关于数据库多表问题">
                         
-                        <span class="card-title">网路层</span>
+                        <span class="card-title">关于数据库多表问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            网络层IP地址32位组成，分为网络号和主机号
-各类IP地址
-A类地址为网络号8位开头为0，第一个可指派网络号1，最后一个可指派网络号126
-B类地址网络号16位开头为10，第一个可指派网络号128.1，最后一个可指派网络号191.255
-C
+                            数据库多表查询可以分为内连接和外连接
+内连接隐式内连接如：
+select 
+    *
+from
+    student,department
+where
+    条件隐式内连接会将两张表进行笛卡尔乘积，将所有的结果进行显示，可以用wher
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
                             </span>
                         <span class="publish-author">
                             
@@ -890,12 +812,11 @@ C
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">计算机网络</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>

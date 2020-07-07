@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>java三目运算符</title>
+      <link href="/2020/09/07/java-san-mu-yun-suan-fu/"/>
+      <url>/2020/09/07/java-san-mu-yun-suan-fu/</url>
+      
+        <content type="html"><![CDATA[<p>当三目运算符进行嵌套时是右结合</p><p>在执行的时候是从左到右执行</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java运算符 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于在springMvc使用servlet问题</title>
+      <link href="/2020/09/07/guan-yu-zai-springmvc-shi-yong-servlet-wen-ti/"/>
+      <url>/2020/09/07/guan-yu-zai-springmvc-shi-yong-servlet-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>在springmvc中可以使用servlet，因为springmvc的前端控制器就是一个servlet，一般情况是对所有请求进行拦截，但由于我们又配置了一个servlet<br>，当我们输入这个servlet的url时，tomcat会进行匹配，而新配置的servlet的url更加匹配，所以会调用这个servlet，而不是调用前端控制器。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>应用层</title>
       <link href="/2020/09/07/ying-yong-ceng/"/>
       <url>/2020/09/07/ying-yong-ceng/</url>
@@ -46,6 +96,56 @@
         <tags>
             
             <tag> 计算机网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对于路径问题探讨</title>
+      <link href="/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/"/>
+      <url>/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/</url>
+      
+        <content type="html"><![CDATA[<p>在前端书写路径如添加css，js，或servlet等可以使用绝对路径或相对路径。</p><p>相对路径是以本资源文件所在路径为根路径</p><p>注意:</p><p>当我们把jsp，html等页面放在web－inf中我们是无法直接访问的，所以我们一般通过controller等方式转发来访问，在这时如果<br>css，js等文件在web－inf里是无法引入到jsp文件里的，如果放到web－inf外，当使用相对路径是不是以资源文件所在路径为根路径，而是以请求链接controller的路径为根路径<br>如当到us.jsp的controller路径为/con/us<br>那么相对路径的根路径就是/con，</p><p>所以jsp放web－inf里时尽量用绝对路径</p><p>绝对路径以项目为根路径</p><p>注意:<br>在前端中绝对路径的根路径是以服务器为根路径的</p><p>注意2:当在前端使用相对路径时会自动加上项目名</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于数据库多表问题</title>
+      <link href="/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/"/>
+      <url>/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>数据库多表查询可以分为内连接和外连接</p><h2 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h2><h3 id="隐式内连接"><a href="#隐式内连接" class="headerlink" title="隐式内连接"></a>隐式内连接</h3><pre><code>如：select     *from    student,departmentwhere    条件</code></pre><p>隐式内连接会将两张表进行笛卡尔乘积，将所有的结果进行显示，可以用where将不符合的条件进行剔除</p><h3 id="显式内连接"><a href="#显式内连接" class="headerlink" title="显式内连接"></a>显式内连接</h3><pre><code>如：select     *from    student [inner] join department on 条件where    条件</code></pre><p>显式内连接也会将两张表进行笛卡尔乘积，但是可以使用on后接条件来进行剔除，而不是使用where</p><h2 id="左连接和右连接"><a href="#左连接和右连接" class="headerlink" title="左连接和右连接"></a>左连接和右连接</h2><p>左连接和右连接很类似</p><pre><code>左连接select     *from    student left [outer] join department on 条件where    条件右连接select     *from    student right [outer] join department on 条件where    条件</code></pre><p>左连接会以左边的表为基准（上边的student表就是左表）与右表的交集进行结合。</p><p>简单来说，会以student表为基准，然后通过on的条件来筛选department，将筛选出来的信息与student相对应的信息进行拼接。然后生成新的表。</p><p>注：如果student中没有对应department的信息<br>则student的信息一样会显示，而对应的department信息会显示空</p><p>右连接和左连接相反，是以department为基准</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据库 </tag>
             
         </tags>
       
@@ -336,9 +436,9 @@
       
         <tags>
             
-            <tag> SSM </tag>
-            
             <tag> Web </tag>
+            
+            <tag> SSM </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-19T06:18:15.601Z</updated>
+  <updated>2020-07-07T01:44:52.381Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java三目运算符</title>
+    <link href="http://yoursite.com/2020/09/07/java-san-mu-yun-suan-fu/"/>
+    <id>http://yoursite.com/2020/09/07/java-san-mu-yun-suan-fu/</id>
+    <published>2020-09-07T01:25:00.000Z</published>
+    <updated>2020-07-07T01:44:52.381Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当三目运算符进行嵌套时是右结合&lt;/p&gt;
+&lt;p&gt;在执行的时候是从左到右执行&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="java运算符" scheme="http://yoursite.com/tags/java%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于在springMvc使用servlet问题</title>
+    <link href="http://yoursite.com/2020/09/07/guan-yu-zai-springmvc-shi-yong-servlet-wen-ti/"/>
+    <id>http://yoursite.com/2020/09/07/guan-yu-zai-springmvc-shi-yong-servlet-wen-ti/</id>
+    <published>2020-09-07T01:25:00.000Z</published>
+    <updated>2020-07-07T01:49:15.592Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在springmvc中可以使用servlet，因为springmvc的前端控制器就是一个servlet，一般情况是对所有请求进行拦截，但由于我们又配置了一个servlet&lt;br&gt;，当我们输入这个servlet的url时，tomcat会进行匹配，而新配置的servlet的ur
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
+    
+  </entry>
   
   <entry>
     <title>应用层</title>
@@ -69,6 +125,64 @@
     
     
       <category term="计算机网络" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对于路径问题探讨</title>
+    <link href="http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/"/>
+    <id>http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/</id>
+    <published>2020-07-07T01:42:00.000Z</published>
+    <updated>2020-07-07T01:47:00.963Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在前端书写路径如添加css，js，或servlet等可以使用绝对路径或相对路径。&lt;/p&gt;
+&lt;p&gt;相对路径是以本资源文件所在路径为根路径&lt;/p&gt;
+&lt;p&gt;注意:&lt;/p&gt;
+&lt;p&gt;当我们把jsp，html等页面放在web－inf中我们是无法直接访问的，所以我们一般通过control
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于数据库多表问题</title>
+    <link href="http://yoursite.com/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/"/>
+    <id>http://yoursite.com/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/</id>
+    <published>2020-07-07T01:25:00.000Z</published>
+    <updated>2020-07-07T01:43:47.665Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;数据库多表查询可以分为内连接和外连接&lt;/p&gt;
+&lt;h2 id=&quot;内连接&quot;&gt;&lt;a href=&quot;#内连接&quot; class=&quot;headerlink&quot; title=&quot;内连接&quot;&gt;&lt;/a&gt;内连接&lt;/h2&gt;&lt;h3 id=&quot;隐式内连接&quot;&gt;&lt;a href=&quot;#隐式内连接&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java基础" scheme="http://yoursite.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -424,9 +538,9 @@
       <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
-    
       <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
+    
+      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
     
   </entry>
   
