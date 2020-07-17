@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="对于路径问题探讨, Demon">
+    <meta name="keywords" content="Oracle, Demon">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>对于路径问题探讨 | Demon</title>
+    <title>Oracle | Demon</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">对于路径问题探讨</h1>
+                    <h1 class="description center-align post-title">Oracle</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
                             </a>
                         
                     </div>
@@ -456,7 +456,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-07
+                    2020-07-17
                 </div>
                 
 
@@ -472,15 +472,307 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>在前端书写路径如添加css，js，或servlet等可以使用绝对路径或相对路径。</p>
-<p>相对路径是以本资源文件所在路径为根路径</p>
-<p>注意:</p>
-<p>当我们把jsp，html等页面放在web－inf中我们是无法直接访问的，所以我们一般通过controller等方式转发来访问，在这时如果<br>css，js等文件在web－inf里是无法引入到jsp文件里的，如果放到web－inf外，当使用相对路径是不是以资源文件所在路径为根路径，而是以请求链接controller的路径为根路径<br>如当到us.jsp的controller路径为/con/us<br>那么相对路径的根路径就是/con，</p>
-<p>所以jsp放web－inf里时尽量用绝对路径</p>
-<p>绝对路径以项目为根路径</p>
-<p>注意:<br>在前端中绝对路径的根路径是以服务器为根路径的</p>
-<p>注意2:当在前端使用相对路径时会自动加上项目名</p>
+                <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>和其他数据库不一样，这里的数据库是一个操作系统只有一个库，可以看作Oracle就只有一个大数据库</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>一个Oracle实例有一系列的后台进程和内存结构组成，一个数据库可以有n个实例。其实也是数据库不过是软件上的</p>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><p>用户是在实例下建立的不同实例可以有同名用户。</p>
+<font color='red'>
+注：表是由用户管理的。
+</font>
 
+<h3 id="表空间"><a href="#表空间" class="headerlink" title="表空间"></a>表空间</h3><p>对数据库进行了逻辑的划分</p>
+<h2 id="创建表空间"><a href="#创建表空间" class="headerlink" title="创建表空间"></a>创建表空间</h2><pre><code>create tablespace itheima
+//保存路径
+datafile &#39;路径&#39;
+//容量
+size 100m //容量为100m
+//内存不够时自动扩展
+autoextend on
+next 10m; //每次扩展10m</code></pre><pre><code>//删除表空间
+drop tablespace itheima</code></pre><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><pre><code>create user itheima(用户名)
+identifie by itheima(密码)
+//默认表空间
+default tablespace ithima（表空间名）;</code></pre><pre><code>oracle数据库常用角色
+connect //连接角色，基本jues 没这个角色将无法使用
+
+resource //开发角色
+
+dba //超级管理员
+
+//给用户授予角色
+grant dba to itheima</code></pre><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>varchaar 和 varchar2 表示一个字符串 ，更常用varchar2</p>
+<p>number（n）表示一个整数长度为n</p>
+<p>number（m，n）表示一个小数，总长度为m，小数是n整数时m-n</p>
+<p>data 表示日期</p>
+<p>clob大对象 表示大文本数据类型可存4g</p>
+<p>blob 大对象，表示二进制数据可存4g</p>
+<h2 id="表的创建和修改"><a href="#表的创建和修改" class="headerlink" title="表的创建和修改"></a>表的创建和修改</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre><code>create table person{
+    pid number(20),
+    pname varchar2(10)
+}</code></pre><h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><pre><code>//添加列
+alter table person add (gender number(1));
+//修改列类型
+alter table person modify gender char(1);
+//修改列名称
+alter table person rename column gender to sex;</code></pre><h2 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h2><p>Oracle的数据库的增删改必须进行commit</p>
+<p>增和改于MySQL一样<br>但删除有所不同</p>
+<pre><code>//删除全部记录
+delete from person;
+
+//删除表结构
+drop table person;
+
+//先删除表，在创建表。效果等同于删除表中全部记录
+对于有大量数据的表，采取此方法会更快
+truncate table person;</code></pre><h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>默认从1开始，一次递增，主要用来给主键赋值使用。</p>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><p>create sequence s_person（名称）；</p>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>s_person.currval 查看当前索引</p>
+<p>s_person.nextval 获得下一个索引</p>
+<font color='red'>
+Oracle的查询必须需要表就是from后必须加一个表不能省略。但没有表时可以使用dual作为虚拟表使用。
+
+<p>dual只是不全语法的，没实际意义<br></font></p>
+<h2 id="scott用户"><a href="#scott用户" class="headerlink" title="scott用户"></a>scott用户</h2><p>是Oracle自带的用户，用来给用户学习</p>
+<h3 id="解锁scott"><a href="#解锁scott" class="headerlink" title="解锁scott"></a>解锁scott</h3><p>必须有超级管理员</p>
+<p>alter user scott account unlock;</p>
+<h3 id="解锁密码"><a href="#解锁密码" class="headerlink" title="解锁密码"></a>解锁密码</h3><p>alter user scott identified by tiger(可以修改别的密码)</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="单行函数"><a href="#单行函数" class="headerlink" title="单行函数"></a>单行函数</h3><h4 id="字符函数"><a href="#字符函数" class="headerlink" title="字符函数"></a>字符函数</h4><pre><code>upper()  //大写
+lower() //小写</code></pre><h4 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h4><pre><code>round(&#39;&#39;,m) //四舍五入 m表示保留几位，负数为往前保留 如-1为保留10位数。
+
+trunc(&#39;&#39;,m)//直接截取，不看后边的数字
+
+mod(&#39;&#39;,m) //求余数</code></pre><h4 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h4><pre><code>sysdate-表的日期//距离现在多少天
+
+sysdate+1 //明天此刻
+
+months_between(sysdate,表的日期)//距离现在几月
+
+months_between(sysdate,表的日期)/12 //距离现在几年
+
+(sysdate-表的日期)/7 //距离现在几周</code></pre><h4 id="转换函数"><a href="#转换函数" class="headerlink" title="转换函数"></a>转换函数</h4><pre><code>to_char(sysdate,&#39;yyyy-mm-dd hh:mi:ss&#39;)//日期转字符串
+
+to_char(&#39;yyyy-mm-dd hh:mi:ss&#39;,sysdate)//字符串转日期
+</code></pre><h4 id="通用函数"><a href="#通用函数" class="headerlink" title="通用函数"></a>通用函数</h4><pre><code>nvl(&#39;&#39;,m)//如果值位null则替换位m</code></pre><h3 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h3><p>从查找出的结果进行判断</p>
+<pre><code>select
+    e.ename
+    case e.ename
+        when &#39;SMITH&#39; then &#39;曹贼&#39;
+        when &#39;ALLEN&#39; then &#39;大耳贼&#39;
+        else &#39;无名&#39;
+        end
+from 
+    emp e;
+</code></pre><p><img src="8A35A4F79C0944A18A5E9C7A86D96F4D" alt="image"></p>
+<pre><code>select
+    e.sal
+    case 
+    when e.sal &gt; 3000 then &#39;高收入&#39;
+    when e.sal &gt; 1500 then &#39;中等收入&#39;
+    else &#39;低收入&#39;
+    end
+from
+emp e；
+</code></pre><p><img src="BA4D6D817CAF4493B0F6E08E5EF04E2B" alt="image"></p>
+<h4 id="oracle专用表达式"><a href="#oracle专用表达式" class="headerlink" title="oracle专用表达式"></a>oracle专用表达式</h4><pre><code>select
+    e.ename
+    decode( e.ename,
+         &#39;SMITH&#39; , &#39;曹贼&#39;,
+         &#39;ALLEN&#39; , &#39;大耳贼&#39;,
+         &#39;无名&#39;)&quot;别名&quot;
+
+from 
+    emp e;</code></pre><h3 id="多行函数"><a href="#多行函数" class="headerlink" title="多行函数"></a>多行函数</h3><pre><code>count()//查询总数
+sum()//总和
+max()//最大值
+min()//最小值
+avg()//平均</code></pre><h2 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h2><p>分组查询中，出现在group by后面的原始列，才能出现在select后面。没有出现在group by后面的列，想在select后面，必须加上聚合函数</p>
+<p>所有条件都不能使用别名来判断</p>
+<p>group by 列明 //进行分组</p>
+<p>where是过滤分组前的数据，having是过滤分组后的数据</p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><p>Oracle专用用法</p>
+<pre><code>select
+    *
+form
+    emp e ,dept d
+where
+    e.deptno = d.petno(+)</code></pre><p>当哪个表用(+)表示时它的令一个表的数据会全部显示，上边的语句等同于e表和d表进行左连接，e表的数据全部显示</p>
+<h2 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h2><p>rownum 是行号，在查询时加上可以显示行号，但进行排序时行号会错乱。</p>
+<p>可以先将查询结果当作子表，在进行输出可以解决</p>
+<pre><code>select 
+    rownum, t.*
+from
+    (select
+        rownum, e.*
+     from 
+        emp e
+    order by
+        e.asl desc
+    ) t;
+</code></pre><p>可以使用rownum作为分页查询</p>
+<p>但rownum不能写大于一个正数</p>
+<pre><code> select * from(
+    select rownum rn, e.* from(
+        select * from emp order by sal desc
+    )e where rownum &lt; 11
+ )where rn &gt; 5
+
+ 将 rownum起个别名可以实现让rownum大于一个正数</code></pre><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>视图提供一个查询的窗口，所有数据来源原表，创建视图必须有dba权限</p>
+<pre><code>create table emp as select * from scott.emp;
+
+//创建视图
+create view v_emp as select ename, jb from emp
+//创建只读视图
+create view v_emp as select ename, jb from emp
+with read only;</code></pre><h3 id="视图作用"><a href="#视图作用" class="headerlink" title="视图作用"></a>视图作用</h3><ol>
+<li>屏蔽一些敏感字段</li>
+<li>保证总部和分组数据及时统一。</li>
+</ol>
+<h2 id="索引-1"><a href="#索引-1" class="headerlink" title="索引"></a>索引</h2><p>在表的列上构建一个二叉树，大幅度提高查询效率的目的，但是索引会影响增删改效率。</p>
+<h3 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a>单列索引</h3><p>触发规则，条件必须是索引中的原始值，单行函数，模糊查询，都会影响索引的触发</p>
+<pre><code>create index idx_ename on emp(ename);
+
+//会触发单列索引
+select * from emp where ename = &#39;SCOTT&#39;</code></pre><h3 id="复合索引"><a href="#复合索引" class="headerlink" title="复合索引"></a>复合索引</h3><p>复合索引中第一列位优先检索列。如果要触发复合索引，必须包含有优先检索列中的原始值</p>
+<pre><code>create index idx_enamejob on emp(ename,job);
+
+//会触发复合索引
+select * from emp where ename = &#39;SCOTT&#39; and job=&#39;xx&#39;
+
+//不触发
+select * from emp where ename = &#39;SCOTT&#39; or job=&#39;xx&#39;
+
+//会触发单列索引
+select * from emp where ename = &#39;SCOTT&#39;</code></pre><h2 id="pl-sql编程语言"><a href="#pl-sql编程语言" class="headerlink" title="pl/sql编程语言"></a>pl/sql编程语言</h2><p>是对sql语言的扩展，使得sql语言具有过程化编程的特性。主要用来编写存储过程和存储函数等</p>
+<h3 id="声明方法"><a href="#声明方法" class="headerlink" title="声明方法"></a>声明方法</h3><pre><code>declare
+    i number(2) := 10;
+    s varchar2(10) := &#39;xiaom&#39;;
+    //引用型变量
+    ena emp.ename%type;
+    //记录型变量（存放一行记录）
+    emprow emp%rowtype;
+begin
+    dbms_output.put_line(i);
+    dbms_output.put_line(s);
+    //查询语句赋值
+    select ename into ena from emp where empno = 7788;
+    select * me into emprow from emp where empno = 7788;
+end;</code></pre><h3 id="if判断"><a href="#if判断" class="headerlink" title="if判断"></a>if判断</h3><pre><code>declare
+    i number(3) := &amp;ii;
+begin
+    if i&lt;18 then
+        dbms_output.put_line(&#39;未成年&#39;);
+    elseif i&lt;40 then
+        dbms_output.put_line(&#39;中年&#39;);
+    else
+        dbms_output.put_line(&#39;老年&#39;);
+    end if;
+end</code></pre><h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><pre><code>
+//while 循环
+declare
+    i number(2) := 1;
+begin
+    while i &lt; 11 loop
+        dbms_output.put_line(i);
+        i := i+1;
+    end loop;
+end;
+
+//exit循环
+declare
+    i number(2) := 1;
+begin
+    loop
+        exit when i &gt; 10;
+        dbms_output.put_line(i);
+        i := i+1;
+    end loop;
+end;
+
+//for循环
+declare
+
+begin
+    for i in 1..10 loop
+       dbms_output.put_line(i);
+    end loop;
+end</code></pre><h3 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h3><p>类似Java的集合，可以放多个对象，多行记录</p>
+<pre><code>declare
+    cursor c1 is select * from emp;
+    emprow emp%rowtype;
+begin
+    open c1;
+        loop
+            fetch c1 into emprow;
+            exit when c1%notfound;
+            dbms_output.put_line(emprow);
+        end loop;
+    close c1;</code></pre><h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><p>存储过程就是提前编译好的一段pl/sql语言，放置在数据库可以直接被调用，一般是固定步骤的业务。</p>
+<pre><code>create [or replace] PROCEDURE 过程名[(参数名 in/out 数据类型)]
+AS | is
+begin
+
+end;
+
+in和out，凡是涉及into查询语句赋值或者：=赋值操作的参数都必须使用out来修饰，其余都用in。不写默认为in
+
+or repalce 代表可以直接修改
+例如: 
+create or replace procedure pl(eno emp.empno%type)
+is
+
+begin
+    update emp set sal = sal+100 where empno = eno;
+    commit;
+end;</code></pre><h2 id="存储函数"><a href="#存储函数" class="headerlink" title="存储函数"></a>存储函数</h2><p>存储过程和存储函数参数都不能带长度</p>
+<p>存储函数的返回值类型不能带长度</p>
+<pre><code>create [or replace] FUNCTION 函数名(参数名  数据类型，参数名  数据类型)return 数据类型
+AS | is
+结果变量 数据类型；
+begin
+
+    return（结果变量）
+end;
+
+
+
+create or replace function f_yearsal(eno emp%type) return number 
+is
+    s number(10);
+begin
+    select sal*12+nvl(comn,0) into s from emp where empno = eno;
+    return s;
+end;</code></pre><h2 id="存储过程和存储函数的区别"><a href="#存储过程和存储函数的区别" class="headerlink" title="存储过程和存储函数的区别"></a>存储过程和存储函数的区别</h2><p>1.存储函数有返回值，而存储过程没有返回值。而如果存储过程想实现返回值，就必须使用out类型参数。即使是存储过程使用了out类型参数，本质也不是真的有了返回值，而是存储过程内部给out类型参数赋值，在执行完毕后直接拿去</p>
+<h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p>触发器是制定一个规则，在我们做增删改操作时会自动触发，查询不会触发</p>
+<p>触发器有两类，语句级触发器，行级触发器。当包含for each row就是行级触发器</p>
+<h3 id="语句级触发器"><a href="#语句级触发器" class="headerlink" title="语句级触发器"></a>语句级触发器</h3><pre><code>create or replace trigger t1
+after
+insert
+on person
+declare
+
+begin
+    dbms_output.put_line(&#39;入职&#39;)
+end;</code></pre><h3 id="行级触发器"><a href="#行级触发器" class="headerlink" title="行级触发器"></a>行级触发器</h3><pre><code> create or replace trigger t2
+ before
+ update
+ on emp
+ for each row
+ declare
+
+ begin
+    if :old.sal &gt; :new.sal then
+        raise_application_error(-20001,&#39;错误&#39;)
+    end fi;
+end;</code></pre><p>给主键列赋值</p>
+<pre><code>create or replace trigger auid
+before
+insert
+on person
+for each row
+daclare
+
+begin
+    select s_person.nextval into :new.pid from dual;
+end;</code></pre>
             </div>
             <hr/>
 
@@ -505,7 +797,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/">http://yoursite.com/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/</a>
+                    <a href="http://yoursite.com/2020/07/17/oracle/">http://yoursite.com/2020/07/17/oracle/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -543,8 +835,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web/">
-                                    <span class="chip bg-color">Web</span>
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
                                 </a>
                             
                         </div>
@@ -716,83 +1008,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/17/oracle/">
+                <a href="/2020/09/07/yun-shu-ceng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Oracle">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="运输层">
                         
-                        <span class="card-title">Oracle</span>
+                        <span class="card-title">运输层</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            结构数据库和其他数据库不一样，这里的数据库是一个操作系统只有一个库，可以看作Oracle就只有一个大数据库
-实例一个Oracle实例有一系列的后台进程和内存结构组成，一个数据库可以有n个实例。其实也是数据库不过是软件上的
-用户用户是在实例下
+                            运输层为进程提供端到端的逻辑通信
+端口用一个16位端口号进行标识
+UDP
+无连接协议，提供无连接服务
+其传送的运输协议数据单元TPDU时UDP报文或用户数据报
+支持单播，多播，广播
+不提供可靠交付
+简单适用于很多应用
+
+UDP是面向报文的，
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    Web基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/07/07/guan-yu-shu-ju-ku-duo-biao-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="关于数据库多表问题">
-                        
-                        <span class="card-title">关于数据库多表问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            数据库多表查询可以分为内连接和外连接
-内连接隐式内连接如：
-select 
-    *
-from
-    student,department
-where
-    条件隐式内连接会将两张表进行笛卡尔乘积，将所有的结果进行显示，可以用wher
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -808,8 +1051,60 @@ where
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/07/07/dui-yu-lu-jing-wen-ti-tan-tao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="对于路径问题探讨">
+                        
+                        <span class="card-title">对于路径问题探讨</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在前端书写路径如添加css，js，或servlet等可以使用绝对路径或相对路径。
+相对路径是以本资源文件所在路径为根路径
+注意:
+当我们把jsp，html等页面放在web－inf中我们是无法直接访问的，所以我们一般通过controller等
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Web%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    Web基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>
