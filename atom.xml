@@ -129,6 +129,60 @@
   </entry>
   
   <entry>
+    <title>SpringMVC注解</title>
+    <link href="http://yoursite.com/2020/07/22/springmvc-zhu-jie/"/>
+    <id>http://yoursite.com/2020/07/22/springmvc-zhu-jie/</id>
+    <published>2020-07-22T11:27:00.000Z</published>
+    <updated>2020-07-22T11:47:20.021Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;RequestMapping&quot;&gt;&lt;a href=&quot;#RequestMapping&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring注解</title>
+    <link href="http://yoursite.com/2020/07/22/spring-zhu-jie/"/>
+    <id>http://yoursite.com/2020/07/22/spring-zhu-jie/</id>
+    <published>2020-07-22T11:25:00.000Z</published>
+    <updated>2020-07-22T11:47:18.771Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Configuration&quot;&gt;&lt;a href=&quot;#Configuration&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Oracle</title>
     <link href="http://yoursite.com/2020/07/17/oracle/"/>
     <id>http://yoursite.com/2020/07/17/oracle/</id>
@@ -510,64 +564,6 @@
     </summary>
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Web文件下载</title>
-    <link href="http://yoursite.com/2020/05/30/web-wen-jian-xia-zai/"/>
-    <id>http://yoursite.com/2020/05/30/web-wen-jian-xia-zai/</id>
-    <published>2020-05-30T13:25:00.000Z</published>
-    <updated>2020-05-30T13:14:22.697Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;需要工具类：commons-io-2.6-bin和commons-fileupload-1.4-bin&lt;/p&gt;
-&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>文件上传</title>
-    <link href="http://yoursite.com/2020/05/30/wen-jian-shang-chuan/"/>
-    <id>http://yoursite.com/2020/05/30/wen-jian-shang-chuan/</id>
-    <published>2020-05-30T13:23:00.000Z</published>
-    <updated>2020-05-30T13:25:11.444Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;实现文件上传必须把&lt;from&gt;设置为enctype=”multipart/form-data” 请求方式为post如&lt;/p&gt;
-&lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Web基础" scheme="http://yoursite.com/categories/Web%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Web" scheme="http://yoursite.com/tags/Web/"/>
-    
-      <category term="SSM" scheme="http://yoursite.com/tags/SSM/"/>
     
   </entry>
   

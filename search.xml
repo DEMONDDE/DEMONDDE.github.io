@@ -104,6 +104,56 @@
     
     
     <entry>
+      <title>SpringMVC注解</title>
+      <link href="/2020/07/22/springmvc-zhu-jie/"/>
+      <url>/2020/07/22/springmvc-zhu-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>指定访问路径</p><pre><code>path:映射路径value：映射路径，可以省略，可以写多个路径method:指定请求方式params:指定限制请求参数的条件，它支持简单表达式，要求参数的key和value必须和配置的一模一样</code></pre><h2 id="RequeParam"><a href="#RequeParam" class="headerlink" title="@RequeParam"></a>@RequeParam</h2><p>把请求中指定名称的参数给控制器的形参赋值</p><pre><code>value:请求参数的名称required：请求参数中是否必须提供此参数，默认为true，如果不提供将报错defaultValue：默认参数值，如果设置了该值，required=true将失效，自动为false,如果没有传该参数，就使用默认值</code></pre><h2 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h2><p>获取请求体内容，直接获取请求体全部数据，get方法不适用</p><p>主要用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)；@RequestBody与@RequestParam()可以同时使用</p><p>当前台传过来的数据类型为 application/json时使用@Requestbody来接收参数</p><pre><code>required：是否必须有请求体，默认为true，get方式会报错</code></pre><h2 id="PathVaribale"><a href="#PathVaribale" class="headerlink" title="@PathVaribale"></a>@PathVaribale</h2><p>用于绑定url中的占位符。例如: 请求url中/delete/{id},这个{id}就是url占位符。<br>url支持占位符是spring3.0之后加入的。是springmvc支持rest风格URL的一个重要标志。</p><pre><code>value:用于指定url占位符名次；required</code></pre><h2 id="RequestHeader"><a href="#RequestHeader" class="headerlink" title="@RequestHeader"></a>@RequestHeader</h2><p>获取请求头</p><p>实际开发不常用</p><pre><code>value：提供消息头required：是否必须有消息头</code></pre><h2 id="CookieValue"><a href="#CookieValue" class="headerlink" title="@CookieValue"></a>@CookieValue</h2><p>用于指定cookie名称的值传入控制器方法参数</p><pre><code>value:指定cookie名称required：是否必须有此cookie</code></pre><h2 id="ModelAttribute"><a href="#ModelAttribute" class="headerlink" title="@ModelAttribute"></a>@ModelAttribute</h2><p>可以修饰方法和参数</p><p>出现方法上，表示当前方法会在控制器的方法执行之前，先执行。它可以修饰没有返回值的方法，通过map接收处理的数据。也可以修饰有返回值的方法，返回值可以作为参数被接收</p><p>出现参数上，获取指定的数据给参数赋值，通过map接收处理的数据，在通过 @ModelAttribute指定参数来获取map的数据。</p><h2 id="SessionAttribute"><a href="#SessionAttribute" class="headerlink" title="@SessionAttribute"></a>@SessionAttribute</h2><p>用于多次执行控制器方法间的参数共享</p><p>能将指定的名称属性通过model存入session里</p><pre><code>value：用于指定存入的属性名称type：用于指定存入的数据类型</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Spring注解</title>
+      <link href="/2020/07/22/spring-zhu-jie/"/>
+      <url>/2020/07/22/spring-zhu-jie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h2><p>指定当前类是配置类</p><p>注：当配置类作为AnnotationConfigApplicationContext的参数时可以不用写</p><h2 id="ComponentScan（）"><a href="#ComponentScan（）" class="headerlink" title="@ComponentScan（）"></a>@ComponentScan（）</h2><p>创建容器所要扫描的包<br>    basePackages：包的位置<br>    value：可以填写多个包的位置</p><h2 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h2><p>用于把当前方法的返回值作为bean对象存入spring的ioc容器中。</p><p>name:指定bean的id</p><h2 id="Scope"><a href="#Scope" class="headerlink" title="@Scope"></a>@Scope</h2><p>决定是单例还是多例<br>    singleton：单例<br>    prototype：多例</p><h2 id="Import"><a href="#Import" class="headerlink" title="@Import"></a>@Import</h2><p>导入其他配置类 </p><h2 id="PropertySource-和-PropertySources"><a href="#PropertySource-和-PropertySources" class="headerlink" title="@PropertySource 和 @PropertySources"></a>@PropertySource 和 @PropertySources</h2><p>导入properties配置文件</p><pre><code>value：文件的名称和路径    关键字：classpath 在类路径下</code></pre><h2 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h2><p>配合@PropertySource 和 @PropertySources使用，读取配置信息</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSM </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Oracle</title>
       <link href="/2020/07/17/oracle/"/>
       <url>/2020/07/17/oracle/</url>
@@ -461,9 +511,9 @@
       
         <tags>
             
-            <tag> Web </tag>
-            
             <tag> SSM </tag>
+            
+            <tag> Web </tag>
             
         </tags>
       
